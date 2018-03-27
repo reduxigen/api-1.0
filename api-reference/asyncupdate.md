@@ -6,23 +6,16 @@ The async operation can be any valid async function---a call to fetch, or axios,
 
 asyncUpdate does the following:
 
-1. Dispatches an 
-   `isLoading`
-    action, which uses update to dynamically add a loading property to your state associated with the field to update. This property has the form: {field\_name}\_LOADING. It is a Boolean property set to the appropriate loading state.
-2. Dispatches a 
-   `hasError`
-    action, which uses update to dynamicaly add an error property to your state associated with the field to update. This property has the form: {field\_name}\_ERROR. It is a Boolean property set to the appropriate error state.
+1. Dispatches an `isLoading` action, which uses update to dynamically add a loading property to your state associated with the field to update. This property has the form: {field\_name}\_LOADING. It is a Boolean property set to the appropriate loading state.
+2. Dispatches a `hasError` action, which uses update to dynamicaly add an error property to your state associated with the field to update. This property has the form: {field\_name}\_ERROR. It is a Boolean property set to the appropriate error state.
 3. If the data loads from the resource, then the loading state is updated to false, and anupdate is dispatched with the returned value.
 4. If there is an error, then the error state is updated with the error returned.
 
 #### Arguments
 
-1. `field: string`
-   : The field to update. Reduxigen supports uses lodash/set under the hood, so it supports any valid lodash setter path string.
-2. `asyncOp: async function`
-   : Any kind of async function is supported \(fetch, axios, etc\).
-3. `fetchMethod: string:[Optional]`
-   . If you're using fetch, supply the response data method you want to use. For example: json, blob, etc.
+1. `field: string`: The field to update. Reduxigen supports uses lodash/set under the hood, so it supports any valid lodash setter path string.
+2. `asyncOp: async function`: Any kind of async function is supported \(fetch, axios, etc\).
+3. `fetchMethod: string:[Optional]`. If you're using fetch, supply the response data method you want to use. For example: json, blob, etc.
 
 #### Returns
 

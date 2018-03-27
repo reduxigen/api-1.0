@@ -7,6 +7,7 @@
 * [API Reference](api-reference.md)
   * [update](api-reference/update.md)
   * [asyncUpdate](api-reference/asyncupdate.md)
+  * action
 
 ## Methods
 
