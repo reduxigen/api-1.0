@@ -25,17 +25,55 @@ The `asyncOp` can be any async function, e.g., a call to `fetch`, or `axios`, or
 
 #### Example
 
-    import { asnycAction } from "reduxigen/actions";
-    import axios from "axios";
+```js
+import { asnycAction } from "reduxigen/actions";
+import axios from "axios";
 
-    export const updateDropoff = asyncAction(
-      "dropoff",
-      value => `${value}--hooptie!`,
-      event => {
-        const resourceId = event.target.value;
-        return axios.get(`/dropoffs/${resourceId}`);
-      }})
-    );
+export const fetchCars = asyncAction(
+  "cars",
+  value => `${value}--hooptie!`,
+  event => {
+    const resourceId = event.target.value;
+    return axios.get(`/cars/${resourceId}`);
+  }})
+);
+
+
+// example use
+import React, { Component } from "react";
+import * as actions from "./actions";
+import connect from "reduxigen/connect";
+
+class CarList extends Component {
+  componentDidMount() {
+    this.props.fetchCars(5);
+  }
+
+  render() {
+    return (
+      <div>
+       { displayCars(this.props) }
+      </div>
+    )
+  }
+}
+
+function displayCars({ cars, cars_loading, cars_error }) {
+  if(cars_error) {
+    return (<h1>An error has occurred</h1>);
+  } else if(cars_loading) {
+    return (<h1>Loading...</h1>);
+  } else {
+    return (
+      <ul>
+        { cars.map(car => <li key={car.id}>{car.name}</li> }
+      </ul>
+     );
+  }
+}
+
+export default connect(["cars"], actions)(CarList);
+```
 
 
 
