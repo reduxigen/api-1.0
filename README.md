@@ -1,6 +1,6 @@
 # ![](/assets/reduxigen-logo.png) Reduxigen
 
-Reduxigen is a set of utilities: `actions` and `connect`.
+Reduxigen is a set of utilities: `actions` and `connect`,  designed to make working with Redux simpler.
 
 #### Actions
 
