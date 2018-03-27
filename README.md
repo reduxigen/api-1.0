@@ -12,5 +12,5 @@ Reduxigen `connect` simplifies connecting state and methods to props when using 
 
 #### Use what you need
 
-Each utility is its own file \(`actions` and `connect`, respectively\). You can load only the files you need. `actions` contains Reduxigen's `central-reducer` and all `action` methods. `connect` contains the simplified `react-reduxconnect` method.
+Each utility is its own file \(`reduxigen/actions` and `reduxigen/connect`\). You can load only the files you need. `actions` contains Reduxigen's `central-reducer` and all `action` methods. `connect` contains the simplified `react-reduxconnect` method.
 
