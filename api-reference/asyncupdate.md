@@ -1,5 +1,7 @@
 ## asyncUpdate
 
+#### `asyncUpdate(field: string, asyncOp: function [, fetchMethod: string]) => thunk`
+
 Like an `update`, but asynchronous. See `update` for details.
 
 The async operation can be any valid async function---a call to fetch, or axios, or flavor-of-the-month. If you're using fetch, because getting data out offetchis a two-step process, with options, you need to provide what type of data you are fetching.

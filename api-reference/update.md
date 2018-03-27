@@ -1,5 +1,7 @@
 ## update
 
+#### `update(field: string) => function`
+
 1. Creates a reducer for updating a field, if one does not exist, using a naming scheme based on the field name.
 2. Creates and returns a redux-action function.
 
@@ -14,8 +16,6 @@ The function returned by `update` accepts a DOM `event` as its default input. It
 `redux-action`: A valid redux action function with a return value of the form: `{ type, payload }`.
 
 #### Example
-
-
 
 ```js
 // state
@@ -57,8 +57,6 @@ const Sample = ({setPickup, pickup, setNested, nested, number, setNumber}) =>
 
 export default connect(["pickup", "nested", "number"], actions)(Sample)
 ```
-
-
 
 
 
