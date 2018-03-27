@@ -1,4 +1,3 @@
-{% method %}
 ## update
 
 1. Creates a reducer for updating a field, if one does not exist, using a naming scheme based on the field name.
@@ -16,11 +15,10 @@ The function returned by `update` accepts a DOM `event` as its default input. It
 
 #### Example
 
-{% sample lang="js" %}
+
 
 ```js
 // state
-
 export default {
   pickup: "",
   nested: {
@@ -57,7 +55,10 @@ const Sample = ({setPickup, pickup, setNested, nested, number, setNumber}) =>
     <button onClick={setNumber(22)}>Reset number to 22</button>
   </>
 
-export default connect(["pickup", "nested", "number"], actions)(Sample);
-
+export default connect(["pickup", "nested", "number"], actions)(Sample)
 ```
-{% endmethod %}
+
+
+
+
+

@@ -2,8 +2,13 @@
 
 ## Overview
 
-* [My Awesome API](README.md)
+* [Reduxigen](README.md)
+* [Quick Start](quick-start.md)
+* [API Reference](api-reference.md)
+  * [update](api-reference/update.md)
+  * [asyncUpdate](api-reference/asyncupdate.md)
 
 ## Methods
 
-* [Defining Methods](methods.md)
+* [Method Definitions](methods.md)
+
