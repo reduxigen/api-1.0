@@ -4,6 +4,9 @@
 
 * [Reduxigen](README.md)
 * [Quick Start](quick-start.md)
+
+## API
+
 * [Actions](api-reference.md)
   * [update](api-reference/update.md)
   * [asyncUpdate](api-reference/asyncupdate.md)
@@ -11,8 +14,4 @@
   * [genericAction](api-reference/genericaction.md)
   * [asyncAction](api-reference/asyncaction.md)
 * Connect
-
-## Methods
-
-* [Method Definitions](methods.md)
 
