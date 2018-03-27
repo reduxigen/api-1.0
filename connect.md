@@ -50,7 +50,7 @@ const sampleComponent = props => (
 export default connect(["test.nested.val as val"])(sampleComponent);
 ```
 
-Finally, it also supports functions. Passing functions can be useful when you want to display computed properties. 
+Finally, it also supports functions. Passing functions can be useful when you want to display computed properties.
 
 `connect` injects the `state` into any function passed to it. It expects, therefore, that any function it works with will have one argument, `state`, in its method signature \(e.g., `function myMethod(state) { }`\). The following example demonstrates using a `reselect` selector:
 
@@ -75,6 +75,22 @@ export const getVisibleTodos = createSelector(
     }
   }
 )
+```
+
+**The Connector**
+
+To pass a function to `connect` add an object with one field to the array. The field name on the object will map to the field name in `props`.
+
+```js
+import { getVisibleTodos } from "../selectors";
+
+const sampleComponent = ({todos}) => (
+  <ul>
+    {todos.map(todo => <li key={todo.id}>{todo.name}</li>}
+  </ul>
+);
+
+export default connect([{todos: getVisibleTodos}])(sampleComponent);
 ```
 
 
