@@ -9,7 +9,7 @@ The function returned by `update` accepts a DOM `event` as its default input. It
 
 #### Arguments
 
-`field: string`: The field to update. This value will map to a field name on your state object. Reduxigen uses lodash/set under the hood, so it supports any valid lodash setter path string.
+`field: string`: The field to update. This value will map to a field name on your state object. Reduxigen uses [lodash/set](https://lodash.com/docs/4.17.5#set) under the hood, so it supports any valid lodash setter path string.
 
 #### Returns
 
