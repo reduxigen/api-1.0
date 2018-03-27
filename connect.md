@@ -1,6 +1,6 @@
 # Connect {#connect}
 
-Wiring up props and actions to a react component is a pain. Reduxigen’s `connect` method aims to simplify this by doing the work for you. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling `react-redux`'s `connect` method.
+Reduxigen’s `connect` simplies mapping state and dispath to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling `react-redux`'s `connect` method. Below is a simplified example:
 
 ```js
 import * as actions from "./booking-actions";
@@ -8,7 +8,8 @@ import connect from "reduxigen/connect";
 
 // Your component here.
 
-const stateMap = ["pickup", "dropoff", "pickupDate", "time", "cars", "cars_loading"];
+// The stateMap array contains a list of property names.
+const stateMap = ["pickup", "dropoff", "details.pickupDate", "details.time", "cars", "cars_loading"];
 export default connect(stateMap, actions)(Home);
 ```
 
