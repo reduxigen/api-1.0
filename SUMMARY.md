@@ -14,5 +14,7 @@
   * [genericAction](api-reference/genericaction.md)
   * [asyncAction](api-reference/asyncaction.md)
 * [Connect](connect.md)
-* [Central Reducer](central-reducer.md)
+* [Reducers](central-reducer.md)
+  * [Central Reducer](central-reducer/central-reduc.md)
+  * appendReducers
 
