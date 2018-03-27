@@ -14,7 +14,7 @@ _base function_
 
 _returned function_
 
-1. `field: string:` The field to update. Reduxigen supports uses `lodash/set` under the hood, so it supports any valid lodash setter path string.
+1. `field: string:` The field to update. Reduxigen uses `lodash/set` under the hood, so it supports any valid lodash setter path string.
 
 #### Returns
 
