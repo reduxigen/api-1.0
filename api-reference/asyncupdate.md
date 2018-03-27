@@ -23,7 +23,7 @@ asyncUpdate does the following:
 
 `redux-thunk`: A Redux thunk.
 
-#### Example
+#### Examples
 
 ```js
 // state
@@ -73,6 +73,14 @@ function displayCars({ cars, cars_loading, cars_error }) {
 }
 
 export default connect(["cars"], actions)(CarList);
+```
+
+#### Example using `fetch`
+
+```js
+import { asnycUpdate } from "reduxigen/actions";
+
+export const fetchCars = asyncUpdate("cars",  query => fetch('http://cars.com/' + query), 'json');
 ```
 
 
