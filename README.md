@@ -1,4 +1,4 @@
-# Reduxigen
+# ![](/assets/reduxigen-logo.png) Reduxigen
 
 Reduxigen is a thin wrapper around `redux`, `react-redux`, `redux-thunk`, and an application's `reducer`. When using Reduxigen, you will rarely need to write a `reducer`, or `thunk`.
 
