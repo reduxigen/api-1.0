@@ -13,7 +13,6 @@ export default {
 1. Create a store:
 
 ```js
-// file name: store.js
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk"; // If you're using thunks
 import { rootReducer } from "reduxigen/actions";
@@ -33,7 +32,7 @@ export const setTest = update("test");
 
 ### Connect actions to your component
 
-Import this action into your component, and connect it using Reduxigen's `connect ` method.
+Import this action into your component, and connect it using Reduxigen's `connect` method.
 
 ```js
 import React from 'react';
