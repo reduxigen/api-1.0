@@ -49,9 +49,8 @@ const Incrementors = ({incrementPassgeners, incrementLuggage}) =>
     <button onChange={incrementPassengers}>Add Passenger</button>
     <button onChange={incrementLuggage}>Add Luggage</button>
   </>
-  
-export default connect([], actions)(Incrementors);
 
+export default connect(null, actions)(Incrementors);
 ```
 
 
