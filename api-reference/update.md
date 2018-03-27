@@ -23,7 +23,7 @@ export default {
   pickup: "",
   nested: {
     value: ""
-  }n
+  },
   number: 22
 };
 
