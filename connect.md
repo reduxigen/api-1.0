@@ -1,6 +1,6 @@
 # Connect {#connect}
 
-Reduxigen’s `connect` simplies mapping state and dispath to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling `react-redux`'s `connect` method. Below is a simplified example:
+Reduxigen’s `connect` simplifies mapping state and dispath to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling `react-redux`'s `connect` method. Below is a simplified example:
 
 ```js
 import * as actions from "./booking-actions";
