@@ -4,7 +4,7 @@
 
 Like an `update`, but asynchronous. See [`update`](/api-reference/update.md) for details.
 
-The async operation can be any valid async function---a call to fetch, or axios, or flavor-of-the-month. If you're using fetch--because getting data out of fetch is a two-step process, with options--you need to provide what type of data you are fetching.
+The async operation can be any valid async function---a call to fetch, or axios, or flavor-of-the-month. If you're using fetch--because getting data out of fetch is a two-step process, with options---you need to provide what type of data you are fetching.
 
 `asyncUpdate` does the following:
 
