@@ -13,6 +13,6 @@
   * [action](api-reference/action.md)
   * [genericAction](api-reference/genericaction.md)
   * [asyncAction](api-reference/asyncaction.md)
-* Connect
+* [Connect](connect.md)
 * [Central Reducer](central-reducer.md)
 
