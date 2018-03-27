@@ -6,7 +6,7 @@ Like an `update`, but asynchronous. See [`update`](/api-reference/update.md) for
 
 The async operation can be any valid async function---a call to fetch, or axios, or flavor-of-the-month. If you're using fetch--because getting data out of fetch is a two-step process, with options--you need to provide what type of data you are fetching.
 
-asyncUpdate does the following:
+`asyncUpdate` does the following:
 
 1. Dispatches an `isLoading` action, which uses update to dynamically add a loading property to your state associated with the field to update. This property has the form: {field\_name}\_LOADING. It is a Boolean property set to the appropriate loading state.
 2. Dispatches a `hasError` action, which uses update to dynamicaly add an error property to your state associated with the field to update. This property has the form: {field\_name}\_ERROR. It is a Boolean property set to the appropriate error state.
