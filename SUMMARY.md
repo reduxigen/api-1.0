@@ -4,6 +4,7 @@
 
 * [Reduxigen](README.md)
 * [Quick Start](quick-start.md)
+* [Integrating with Existing App](integrating-with-existing-app.md)
 
 ## API
 
@@ -16,5 +17,5 @@
 * [Connect](connect.md)
 * [Reducers](central-reducer.md)
   * [Central Reducer](central-reducer/central-reduc.md)
-  * appendReducers
+  * [appendReducers](central-reducer/appendreducers.md)
 
