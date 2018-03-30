@@ -36,7 +36,7 @@ export default {
 import { asnycUpdate } from "reduxigen/actions";
 import axios from "axios";
 
-export const fetchCars = asyncUpdate("cars",  query => axios.get("http://cars.com/cars", query));
+export const displayCars = asyncUpdate("cars",  query => axios.get("http://cars.com/cars", query));
 
 
 // example use
@@ -80,7 +80,7 @@ export default connect(["cars"], actions)(CarList);
 ```js
 import { asnycUpdate } from "reduxigen/actions";
 
-export const fetchCars = asyncUpdate("cars",  query => fetch('http://cars.com/' + query), 'json');
+export const displayCars = asyncUpdate("cars",  query => fetch('http://cars.com/' + query), 'json');
 ```
 
 
