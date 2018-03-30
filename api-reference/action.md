@@ -30,7 +30,7 @@ export const setPickup = action("pickup", value => `${value}_woop!`);
 
 // example use
 import React from "react";
-import actions from "./actions";
+import * as actions from "./actions";
 import connect from "reduxigen/connect";
 
 const Pickup = ({pickup, setPickup}) =>
@@ -43,7 +43,6 @@ const Pickup = ({pickup, setPickup}) =>
   </>
 
 export default connect(["pickup"], actions)(Pickup);
-
 ```
 
 
