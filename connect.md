@@ -94,5 +94,35 @@ const sampleComponent = ({todos}) => (
 export default connect([{todos: getVisibleTodos}])(sampleComponent);
 ```
 
+#### _Experimental_
+
+NOTE: _This functionality is currently under active development, and is not yet exposed_.
+
+There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. While the API for this functionality will not change, its implementation is still under evaluation. This functionality should work with any commonly-used method for creating React components.
+
+Note that, because of the approach used to map properties, certain property names are reserved to prevent their being overridden. These property names map to common reserved property names---such as `t,`which is a commonly used `i18n` property name. Currently, `t` is the only reserved property name. 
+
+A few examples are below:
+
+**Stateless Functional**;
+
+```js
+const actions = { actionOne: () => {} };
+const sampleComponent = ({ test }) => <h1 className="test">{test}</h1>;
+const Sut = connect(actions)(sampleComponent);
+```
+
+**Class Based**:
+
+```js
+class sampleComponent extends Component {
+  render() {
+    return <h1 className="test">{this.props.test}</h1>;
+  }
+}
+const expected = "test";
+const Sut = connect()(sampleComponent);
+```
+
 
 
