@@ -100,6 +100,16 @@ NOTE: _This functionality is currently under active development, and is not yet 
 
 There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured `props` method parameters in stateless-functional components are not supported.
 
+Also, note that the `connect` method is overloaded. It can be called with none, one, or two parameters, as follows:
+
+| invocation | notes |
+| :--- | :--- |
+| connect\(\) | Called when there are only properties, and no actions. Will automatically map properties to the component. |
+| connect\(stateMap: Array&lt;string&gt;\) | When an array is passed in as the first argument, the function assumes that the array is a collection of properties to map. |
+| connect\(actions: Object\) | When an object is passed in as the first argument, the function assumes that it should auto-map properties, and that the argument is a hash of actions. |
+| connect\(stateMap: Array&lt;string&gt;, actions\) | The standard method of calling \`connect\`, the first argument is an array of properties to map. The second argument is a hash of actions. |
+
+  
 Note that, because of the approach used to map properties, certain property names are reserved to prevent their being overridden. These property names map to common reserved property names---such as `t,`which is a commonly used `i18n` property name. Currently, `t` is the only reserved property name.
 
 A few examples are below:
@@ -126,7 +136,7 @@ const Sut = connect()(sampleComponent);
 
 _**Not Supported**_:
 
-As noted above, stateless-functional components that destructure props in their method signatures are** not **supported. 
+As noted above, stateless-functional components that destructure props in their method signatures are** not **supported.
 
 ```js
 // Destructured props in the method signature will not work!
