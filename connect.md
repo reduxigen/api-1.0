@@ -98,7 +98,7 @@ export default connect([{todos: getVisibleTodos}])(sampleComponent);
 
 NOTE: _This functionality is currently under active development, and is not yet exposed_.
 
-There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. While the API for this functionality will not change, its implementation is still under evaluation. This functionality should work with any commonly-used method for creating React components. This said, the current implementation relies on unreliable function internals, and may never actually be included in Reduxigen, unless a more reliable means for accomplishing this end can be found.
+There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured `props` method parameters in stateless-functional components are not supported.
 
 Note that, because of the approach used to map properties, certain property names are reserved to prevent their being overridden. These property names map to common reserved property names---such as `t,`which is a commonly used `i18n` property name. Currently, `t` is the only reserved property name.
 
@@ -108,7 +108,7 @@ A few examples are below:
 
 ```js
 const actions = { actionOne: () => {} };
-const sampleComponent = ({ test }) => <h1 className="test">{test}</h1>;
+const sampleComponent = props => <h1 className="test">{props.test}</h1>;
 const Sut = connect(actions)(sampleComponent);
 ```
 
@@ -121,6 +121,16 @@ class sampleComponent extends Component {
   }
 }
 const expected = "test";
+const Sut = connect()(sampleComponent);
+```
+
+_**Not Supported**_:
+
+As noted above, stateless-functional components that destructure props in their method signatures are** not **supported. 
+
+```js
+// Destructured props in the method signature will not work!
+const sampleComponent = ({test}) => <h1 className="test">{test}</h1>;
 const Sut = connect()(sampleComponent);
 ```
 
