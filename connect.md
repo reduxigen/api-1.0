@@ -166,7 +166,7 @@ class SampleComponent extends Component {
   render() {
       // Actions aren't impacted by automap. They can be destructured.
       const ({setName}) = this.props.setName;
-
+      const props = this.props;
       return (
       <div>
         <input 
