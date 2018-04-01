@@ -140,9 +140,8 @@ The automap version of the `connect` method is overloaded. It can be called with
 **Stateless Functional:**
 
 ```js
-const actions = { actionOne: () => {} };
 const sampleComponent = props => <h1 className="test">{props.test}</h1>;
-export default connect(actions)(sampleComponent);
+export default connect()(sampleComponent);
 ```
 
 **Class Based**:
@@ -154,6 +153,31 @@ class SampleComponent extends Component {
   }
 }
 export default connect()(sampleComponent);
+```
+
+#### With Actions:
+
+Actions aren't impacted by automap. They can be destructured.
+
+```js
+import * as actions from "./actions";
+
+class SampleComponent extends Component {
+  render() {
+      // Actions aren't impacted by automap. They can be destructured.
+      const ({setName}) = this.props.setName;
+
+      return (
+      <div>
+        <input 
+          className="input" 
+          value={props.name}
+          onChange={setName}
+        />
+      </div>);
+  }
+}
+export default connect(actions)(sampleComponent);
 ```
 
 _**Not Supported**_:
