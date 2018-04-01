@@ -108,7 +108,7 @@ For example:
 {props.car.make}
 ```
 
-Automapping nested objects is limited to dot-nested properties. For example, the following will not work:
+Automapping nested objects is limited to dot-nested properties. For example, the following will not work with automapping:
 
 ```js
 {props.vehicles[0].color}
