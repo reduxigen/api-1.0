@@ -143,7 +143,7 @@ export default connect()(sampleComponent);
 
 #### Ignoring Properties
 
-By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you. 
+By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you.
 
 For example:
 
@@ -151,12 +151,12 @@ For example:
 class SampleComponent extends Component {
   render() {
     // Assign the prop to a variable using bracket syntax
-    const translate = props["t"];
-    
+    const t = props["t"];
+
     return (
     <div>
       <h1 className="test">{this.props.test}</h1>
-      <p>{translate("myKey")}</p>
+      <p>{t("myKey")}</p>
     </div>);
   }
 }
