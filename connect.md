@@ -98,7 +98,7 @@ export default connect([{todos: getVisibleTodos}])(sampleComponent);
 
 NOTE: _This functionality is currently under active development, and is not yet exposed_.
 
-There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured method parameters in stateless-functional components are not supported.
+There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies. See the examples below for details.
 
 Also, note that the `connect` method is overloaded. It can be called with none, one, or two parameters, as follows:
 
@@ -127,19 +127,20 @@ class SampleComponent extends Component {
     return <h1 className="test">{this.props.test}</h1>;
   }
 }
-const expected = "test";
 export default connect()(sampleComponent);
 ```
 
 _**Not Supported**_:
 
-As noted above, stateless-functional components that destructure props in their method signatures are** not **supported.
+As noted above, destructured props are** not **supported.
 
 ```js
 // Destructured props in the method signature will not work!
 const sampleComponent = ({test}) => <h1 className="test">{test}</h1>;
 export default connect()(sampleComponent);
 ```
+
+#### 
 
 #### Ignoring Properties
 
@@ -160,7 +161,6 @@ class SampleComponent extends Component {
     </div>);
   }
 }
-const expected = "test";
 export default connect()(sampleComponent);
 ```
 
