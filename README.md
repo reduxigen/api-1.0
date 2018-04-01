@@ -1,5 +1,19 @@
 # ![](/assets/reduxigen-logo.png) Reduxigen
 
+Reduxigen makes working with React and Redux ridiculously simple:
+
+*  No action creators. 
+*  No reducers. 
+*  No `mapStateToProps`. 
+*  No `mapDispatchToProps`. 
+
+What is there? 
+
+* functions that update your state, and 
+* a powerful, simple `connect` method to bind React to Redux. 
+
+
+
 Reduxigen is a set of utilities: `actions` and `connect`,  designed to make working with Redux simpler.
 
 #### Actions
