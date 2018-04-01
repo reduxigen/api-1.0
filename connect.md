@@ -98,7 +98,7 @@ export default connect([{todos: getVisibleTodos}])(sampleComponent);
 
 NOTE: _This functionality is currently under active development, and is not yet exposed_.
 
-There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured `props` method parameters in stateless-functional components are not supported.
+There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured method parameters in stateless-functional components are not supported.
 
 Also, note that the `connect` method is overloaded. It can be called with none, one, or two parameters, as follows:
 
