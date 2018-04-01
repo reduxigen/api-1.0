@@ -135,7 +135,7 @@ The automap version of the `connect` method is overloaded. It can be called with
 | connect\(actions: Object\) | When an object is passed in as the first argument, the function assumes that it should automap properties, and that the argument is a hash of actions. |
 | connect\(stateMap: Array&lt;string&gt;, actions\) | The standard method of calling \`connect\`. The first argument is an array of properties to map. The second argument is a hash of actions. |
 
-A few examples are below:
+#### Automap Examples
 
 **Stateless Functional:**
 
@@ -181,9 +181,9 @@ class SampleComponent extends Component {
 export default connect()(sampleComponent);
 ```
 
-##### Ignoring Properties:
+#### Automap: Ignoring Properties
 
-By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` in your function body using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you.
+By default, automap maps all props referenced in a component. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` in your function body using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you.
 
 For example:
 
