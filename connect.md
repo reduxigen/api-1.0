@@ -132,15 +132,28 @@ export default connect()(sampleComponent);
 
 _**Not Supported**_:
 
-As noted above, destructured props are** not **supported.
+As noted above, destructured props are** not **officially supported.
 
 ```js
-// Destructured props in the method signature will not work!
+// Destructured props in the method signature will not work.
 const sampleComponent = ({test}) => <h1 className="test">{test}</h1>;
 export default connect()(sampleComponent);
 ```
 
-#### 
+```js
+class SampleComponent extends Component {
+    render() {
+      // Destructured props in a method body cannot be guaranteed to reliably work.
+      const ({test}) = this.props;
+  
+      return (
+      <div>
+        <h1 className="test">{test}</h1>
+      </div>);
+  }
+}
+export default connect()(sampleComponent);
+```
 
 #### Ignoring Properties
 
