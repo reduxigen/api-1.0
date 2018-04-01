@@ -1,6 +1,6 @@
 # Connect {#connect}
 
-Reduxigen’s `connect` simplifies mapping state and dispatch to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling `react-redux`'s `connect` method. Below is a simplified example:
+Reduxigen’s `connect` simplifies mapping state and dispatch to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling the `react-redux` `connect` method. Below is a simplified example:
 
 ```js
 import * as actions from "./booking-actions";
@@ -111,7 +111,7 @@ Also, note that the `connect` method is overloaded. It can be called with none, 
 
 A few examples are below:
 
-**Stateless Functional**;
+**Stateless Functional:**
 
 ```js
 const actions = { actionOne: () => {} };
@@ -155,7 +155,7 @@ class SampleComponent extends Component {
 export default connect()(sampleComponent);
 ```
 
-#### Ignoring Properties
+##### Ignoring Properties:
 
 By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` in your function body using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you.
 
