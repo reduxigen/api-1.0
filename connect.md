@@ -109,9 +109,6 @@ Also, note that the `connect` method is overloaded. It can be called with none, 
 | connect\(actions: Object\) | When an object is passed in as the first argument, the function assumes that it should auto-map properties, and that the argument is a hash of actions. |
 | connect\(stateMap: Array&lt;string&gt;, actions\) | The standard method of calling \`connect\`, the first argument is an array of properties to map. The second argument is a hash of actions. |
 
-  
-Note that, because of the approach used to map properties, certain property names are reserved to prevent their being overridden. These property names map to common reserved property names---such as `t,`which is a commonly used `i18n` property name. Currently, `t` is the only reserved property name.
-
 A few examples are below:
 
 **Stateless Functional**;
@@ -119,19 +116,19 @@ A few examples are below:
 ```js
 const actions = { actionOne: () => {} };
 const sampleComponent = props => <h1 className="test">{props.test}</h1>;
-const Sut = connect(actions)(sampleComponent);
+export default connect(actions)(sampleComponent);
 ```
 
 **Class Based**:
 
 ```js
-class sampleComponent extends Component {
+class SampleComponent extends Component {
   render() {
     return <h1 className="test">{this.props.test}</h1>;
   }
 }
 const expected = "test";
-const Sut = connect()(sampleComponent);
+export default connect()(sampleComponent);
 ```
 
 _**Not Supported**_:
@@ -141,7 +138,30 @@ As noted above, stateless-functional components that destructure props in their 
 ```js
 // Destructured props in the method signature will not work!
 const sampleComponent = ({test}) => <h1 className="test">{test}</h1>;
-const Sut = connect()(sampleComponent);
+export default connect()(sampleComponent);
+```
+
+#### Ignoring Properties
+
+By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you. 
+
+For example:
+
+```js
+class SampleComponent extends Component {
+  render() {
+    // Assign the prop to a variable using bracket syntax
+    const translate = props["t"];
+    
+    return (
+    <div>
+      <h1 className="test">{this.props.test}</h1>
+      <p>{translate("myKey")}</p>
+    </div>);
+  }
+}
+const expected = "test";
+export default connect()(sampleComponent);
 ```
 
 
