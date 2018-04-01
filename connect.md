@@ -98,14 +98,14 @@ export default connect([{todos: getVisibleTodos}])(sampleComponent);
 
 NOTE: _This functionality is currently under active development, and is not yet exposed_.
 
-There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component that conforms to the _automap standard of referencing properites_ will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies. 
+There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component that conforms to the _automap standard of referencing properites_ will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies.
 
 The automap standard of referencing properties is:  `prop.name`
 
 For example:
 
 ```js
-{props.vechicleType}
+{props.color}
 
 {props.car.make}
 ```
