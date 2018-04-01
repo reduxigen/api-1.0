@@ -132,8 +132,8 @@ The automap version of the `connect` method is overloaded. It can be called with
 
 | Invocation | Notes |
 | :--- | :--- |
-| connect\(\) | Called when there are only properties, and no actions. Will automatically map properties to the component. |
-| connect\(stateMap: Array&lt;string&gt;\) | When an array is passed in as the first argument, the function assumes that the array is a collection of properties to map. |
+| connect\(\) | Called when there are only properties to map, and no actions. Will automatically map properties to the component. |
+| connect\(stateMap: Array&lt;string&gt;\) | When an array is passed in as the first argument, the function assumes that the array is a collection of properties to map. No automapping will occur. |
 | connect\(actions: Object\) | When an object is passed in as the first argument, the function assumes that it should auto-map properties, and that the argument is a hash of actions. |
 | connect\(stateMap: Array&lt;string&gt;, actions\) | The standard method of calling \`connect\`, the first argument is an array of properties to map. The second argument is a hash of actions. |
 
