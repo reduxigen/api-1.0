@@ -162,9 +162,13 @@ By default, all props referenced in a component are mapped. There will be times 
 For example:
 
 ```js
+import React, { Component } from "react";
+import connect from "reduxigen/connect";
+import { translate } from "react-i18next";
+
 class SampleComponent extends Component {
   render() {
-    // Assign the prop to a variable using bracket syntax
+    // Assign the prop to a variable using bracket syntax. This will not be automapped.
     const t = props["t"];
 
     return (
@@ -174,7 +178,7 @@ class SampleComponent extends Component {
     </div>);
   }
 }
-export default connect()(sampleComponent);
+export default translate()(connect()(sampleComponent));
 ```
 
 
