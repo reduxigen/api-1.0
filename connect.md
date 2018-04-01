@@ -98,9 +98,37 @@ export default connect([{todos: getVisibleTodos}])(sampleComponent);
 
 NOTE: _This functionality is currently under active development, and is not yet exposed_.
 
-There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies. See the examples below for details.
+There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component that conforms to the _automap standard of referencing properites_ will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies. 
 
-Also, note that the `connect` method is overloaded. It can be called with none, one, or two parameters, as follows:
+The automap standard of referencing properties is:  `prop.name`
+
+For example:
+
+```js
+{props.vechicleType}
+
+{props.car.make}
+```
+
+Automapping nested objects is limited to dot-nested properties. For example, the following will not work:
+
+```js
+{props.vehicles[0].color}
+```
+
+The property in the preceding example could be automapped as follows:
+
+```js
+const vehicles = props.vehicles;
+
+{vehicles[0].color}
+```
+
+See the examples below for details.
+
+##### Overloaded Method
+
+The automap version of the `connect` method is overloaded. It can be called with none, one, or two parameters, as follows:
 
 | Invocation | Notes |
 | :--- | :--- |
