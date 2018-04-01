@@ -135,7 +135,7 @@ _**Not Supported**_:
 As noted above, destructured props are** not **officially supported.
 
 ```js
-// Destructured props in the method signature will not work.
+// Destructured props in a method signature will not work.
 const sampleComponent = ({test}) => <h1 className="test">{test}</h1>;
 export default connect()(sampleComponent);
 ```
