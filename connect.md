@@ -102,7 +102,7 @@ There is an experimental usage of `connect` that automatically maps properties t
 
 Also, note that the `connect` method is overloaded. It can be called with none, one, or two parameters, as follows:
 
-| invocation | notes |
+| Invocation | Notes |
 | :--- | :--- |
 | connect\(\) | Called when there are only properties, and no actions. Will automatically map properties to the component. |
 | connect\(stateMap: Array&lt;string&gt;\) | When an array is passed in as the first argument, the function assumes that the array is a collection of properties to map. |
