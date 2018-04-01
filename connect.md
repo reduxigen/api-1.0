@@ -145,7 +145,7 @@ class SampleComponent extends Component {
     render() {
       // Destructured props in a method body cannot be guaranteed to reliably work.
       const ({test}) = this.props;
-  
+
       return (
       <div>
         <h1 className="test">{test}</h1>
@@ -157,7 +157,7 @@ export default connect()(sampleComponent);
 
 #### Ignoring Properties
 
-By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you.
+By default, all props referenced in a component are mapped. There will be times when you don't want automap to map a prop. For example, `reacti18n-next`, uses an HOC to inject its `t` function as a prop. If you refer to `t` in your function body using standard props syntax, automap will overwrite it. To avoid this, use bracket syntax to refer to props you don't want automap to map for you.
 
 For example:
 
