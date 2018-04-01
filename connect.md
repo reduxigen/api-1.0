@@ -94,7 +94,7 @@ const sampleComponent = ({todos}) => (
 export default connect([{todos: getVisibleTodos}])(sampleComponent);
 ```
 
-#### _Experimental_
+#### Automap _ \[Experimental\]_
 
 NOTE: _This functionality is currently under active development, and is not yet exposed_.
 
