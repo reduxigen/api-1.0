@@ -2,12 +2,12 @@
 
 #### `action(name: string, func: function) => function`
 
-Use an `action` when you need to do something more than a simple field update. For example, if you want to write a custom increment.
+Use an `action` when you need to do something more than a simple field update. For example, if you want to append a value to an array in your state, or write a custom increment.
 
 #### Arguments
 
 1. `field: string:` The field to update. Reduxigen supports uses `lodash/set` under the hood, so it supports any valid lodash setter path string.
-2. `func` a function that will be applied to the value passed to the reducer.
+2. `func` a function that will be applied to the value passed to the reducer. Note that this function will have access to the previous state via closure.
 
 #### Returns
 
