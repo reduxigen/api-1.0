@@ -45,5 +45,13 @@ const Pickup = ({pickup, setPickup}) =>
 export default connect(["pickup"], actions)(Pickup);
 ```
 
+**Example action with state**:
+
+The following example demonstrates how to add an item to an Array.
+
+```js
+export const addContact = action("contacts", (contact, state) => [...state.contacts, contact]);
+```
+
 
 
