@@ -10,7 +10,7 @@ _base function_
 
 1. `name` is used to create the reducer's method name. The method name is created by combining `name`
     with the `field`, e.g., `{field}_{name}`
-2. `func` a function that will be applied to the value passed to the reducer.
+2. `func` a function that will be applied to the value passed to the reducer. Note that this function will have access to the previous state via closure.
 
 _returned function_
 

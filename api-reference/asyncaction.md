@@ -14,7 +14,7 @@ The `asyncOp` can be any async function, e.g., a call to `fetch`, or `axios`, or
 #### Arguments
 
 1. `field: string:` The field to update. Reduxigen supports uses `lodash/set` under the hood, so it supports dot-delimited field identifier strings.
-2. `func` is a function that will be run on the value when the reducer is called.
+2. `func` a function that will be applied to the value passed to the reducer. Note that this function will have access to the previous state via closure.
 3. `asyncOp: async function:` Any kind of async function is supported \(fetch, axios, etc\).
 4. `fetchMethod: string:`Optional. If you're using `fetch`, supply the response data method you want to use. For example: 
    `json`, `blob`, etc.
