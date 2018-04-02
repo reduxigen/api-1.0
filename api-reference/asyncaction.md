@@ -75,5 +75,32 @@ function displayCars({ cars, cars_loading, cars_error }) {
 export default connect(["cars"], actions)(CarList);
 ```
 
+##### Dispatching an action after an update:
+
+```js
+import store from "./store/store";
+
+const setSuccess = update("actionSuccess");
+
+const putContact = contact => {
+  return fetch(`https://contacts/${contact.id}`, {
+    method: "PUT",
+    body: JSON.stringify(contact),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  }).then(data => {
+    // Dispatch an action following a successful async operation
+    store.dispatch(setSuccess(true));
+    // Make sure you return the payload from your resource
+    return data;
+  });
+};
+
+export const updateContact = asyncUpdate("currentContact", updateContactData, "json");
+```
+
+
+
 
 
