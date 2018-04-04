@@ -1,5 +1,8 @@
 # Connect {#connect}
 
+#### `connect([stateMap], [actions], [mergeProps], [options]) => function`
+
+  
 Reduxigen’s `connect` simplifies mapping state and dispatch to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling the `react-redux` `connect` method. Below is a simplified example:
 
 ```js
@@ -93,6 +96,10 @@ const sampleComponent = ({todos}) => (
 
 export default connect([{todos: getVisibleTodos}])(sampleComponent);
 ```
+
+#### mergeProps & options
+
+`mergeProps` and `options` are passthrough values to `react-redux`'s `connect` method. See the `react-redux` documentation for how to use them: [react-redux connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options).
 
 #### Automap _ \[Experimental\]_
 
