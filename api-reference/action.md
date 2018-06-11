@@ -1,6 +1,6 @@
 ## action
 
-#### `action(name: string, func: function) => function`
+#### `action(field: string, func: function) => function`
 
 Use an `action` when you need to do something more than a simple field update. For example, if you want to append a value to an array in your state, or write a custom increment.
 
