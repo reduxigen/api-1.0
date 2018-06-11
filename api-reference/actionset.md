@@ -64,8 +64,6 @@ export default connect(["address", "city", "state"], actions)(Pickup);
 
 **Example action with state**:
 
-The following example demonstrates how to add an item to an Array.
-
 ```js
 export const addContact = action("deposit", (value, state) => {
    const balance = state.balance + value;
