@@ -62,7 +62,7 @@ const Pickup = ({address, city, state, clearAddress}) =>
 export default connect(["address", "city", "state"], actions)(Pickup);
 ```
 
-**Example action with state**:
+**Example actionSet with state**:
 
 ```js
 export const addContact = action("deposit", (value, state) => {
