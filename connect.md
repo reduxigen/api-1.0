@@ -2,7 +2,8 @@
 
 #### `connect([stateMap], [actions], [mergeProps], [options]) => function`
 
-  
+In most cases, using `react-redux`'s `connect` method is recommended. However, if you are curious, Reduxigen does come with it's own `connect` method, which is experimental. 
+
 Reduxigen’s `connect` simplifies mapping state and dispatch to props. It does this by creating the `mapStateToProps` and `mapDispatchToProps` functions for you, then calling the `react-redux` `connect` method. Below is a simplified example:
 
 ```js
@@ -101,9 +102,9 @@ export default connect([{todos: getVisibleTodos}])(sampleComponent);
 
 `mergeProps` and `options` are passthrough values to `react-redux`'s `connect` method. See the `react-redux` documentation for how to use them: [react-redux connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options).
 
-#### Automap _ \[Experimental\]_
+#### Automap
 
-There is an experimental usage of `connect` that automatically maps properties to a component. Any property used in the component that conforms to the _automap standard of referencing properites_ will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies.
+Reduxigen's `connect` can automatically map properties to a component. Any property used in the component that conforms to the _automap standard of referencing properites_ will be automatically mapped. Currently, destructured props are not supported. This includes destructured props in method signatures and function bodies.
 
 The automap standard of referencing properties is:  `prop.name`
 
