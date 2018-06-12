@@ -10,5 +10,3 @@ When you create an `action`, Reduxigen manages the reducer and action-creator fo
 
 
 
-
-

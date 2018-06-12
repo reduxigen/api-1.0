@@ -1,30 +1,26 @@
 # ![](/assets/reduxigen-logo.png) Reduxigen
 
-Reduxigen makes working with React and Redux ridiculously simple:
+# Reduxigen {#reduxigen}
 
-*  No action creators. 
-*  No reducers. 
-*  No `mapStateToProps`. 
-*  No `mapDispatchToProps`. 
+Reduxigen is a ridiculously simple React state management system built on top of Redux that is incredibly robust.
 
-What is there? 
+### Simple {#simple}
 
-* functions that update your state, and 
-* a powerful, simple `connect` method to bind React to Redux. 
+Working with state in Reduxigen entails only two concepts:
 
+* State
 
+* Functions
 
-Reduxigen is a set of utilities: `actions` and `connect`,  designed to make working with Redux simpler.
+In Reduxigen, as in Redux, your state is a plain JavaScript object.
 
-#### Actions
+Reduxigen functions update values in the state.\*
 
-Reduxigen `actions` simplify the process of updating Redux state. They eliminate the need to write all the boilerplate of reducers and action-creators.
+### Robust {#robust}
 
-#### Connect
+If you've used Redux, many of the concepts in Reduxigen will be very familiar. However, you'll find using Reduxigen much simpler than Redux. You'll write less code, which will make you more efficient, and less prone to error. At the same time, you'll get all the benefits Redux has to offer.
 
-Reduxigen `connect` simplifies connecting state and methods to props when using `react-redux`.
+---
 
-#### Use what you need
-
-Each utility is its own file \(`reduxigen/actions` and `reduxigen/connect`\). You can load only the files you need. `actions` contains Reduxigen's `central-reducer` and all `action` methods. `connect` contains the simplified `react-reduxconnect` method.
+\* More accurately, Reduxigen functions create a new state with appropriately updated values.
 
