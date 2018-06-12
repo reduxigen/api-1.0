@@ -38,7 +38,7 @@ export const setNumber = update("number");
 // example use
 import React from "react";
 import * as actions from "./actions";
-import connect from "reduxigen/connect";
+import { connect } from "react-redux";
 
 const Sample = ({setPickup, pickup, setNested, nested, number, setNumber}) =>
   <>
@@ -55,8 +55,14 @@ const Sample = ({setPickup, pickup, setNested, nested, number, setNumber}) =>
     <span>{number}</span>
     <button onClick={setNumber(22)}>Reset number to 22</button>
   </>
+  
+const mapStateToProps = state => ({
+  pickup: state.pickup,
+  nested: state.nested,
+  number: state.number
+})
 
-export default connect(["pickup", "nested", "number"], actions)(Sample)
+export default connect(mapStateToProps, actions)(Sample)
 ```
 
 
