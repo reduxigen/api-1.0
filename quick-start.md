@@ -32,19 +32,19 @@ export const setTest = update("test");
 
 ### Connect actions to your component
 
-Import this action into your component, and connect it using Reduxigen's `connect` method.
+Import this action into your component, and connect it using `react-redux`'s `connect` method.
 
 ```js
 import React from 'react';
 import * as actions from './test-actions';
-import connect from "reduxigen/connect";
+import { connect } from "react-redux";
 
 export const Test = ({test, setTest}) => <button onClick={setTest}>{test}</button>;
 
-export default connect(['test'], actions)(Test);
-```
+const mapStateToProps = state => ({test: state.test});
 
-Reduxigen's `connect` will map the array of prop names you pass it to `mapStateToProps`. It will automatically map the actions you pass it to `mapDispatchToProps`.
+export default connect(mapStateToProps, actions)(Test);
+```
 
 ## 
 
